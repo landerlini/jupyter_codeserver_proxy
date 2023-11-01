@@ -17,7 +17,7 @@ def setup_codeserver():
         if working_dir is None:
             working_dir = os.getenv("JUPYTER_SERVER_ROOT", ".")
 
-        return [full_path, f'--port={port}', "--auth", "none", working_dir ]
+        return [full_path, f'--port={port}', "--auth", "none", "--disable-telemetry", working_dir ]
 
     return {
         'command': _codeserver_command,
